@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+		*{
+			box-sizing:border-box;
+		}
+		body{
+			margin:0;
+		}
+
+		body, button{
+			font-size:12pt;
+		}
+
+		input{
+			padding:10px;
+			width:100%;
+			font-size:10pt;
+			font-family: monospace;
+		}
+		table{
+			width:inherit;
+			border-spacing:3px 8px;
+			border-collapse:separate;
+		}
+
+		#wikiwixOptions{
+			width:100%;
+			/* border:2px solid green;*/
+			padding:20px;
+		}
+		button{
+			padding: 10px;
+		}
+
+      </style>
+    </head>
+    <body>
+		<div id="wikiwixOptions">
+			<label for="host">Host: </label>
+			<input type="text" name="host" id="host" placeholder="localhost:9000">
+			<h2>Kiwix Rules</h2>
+			<table>
+				<thead>
+					<tr>
+						<td>Offline Wiki</td>
+						<td>Target</td>
+						<td>Matcher</td>
+					</tr>
+				</thead>
+				<tbody id="tableBody">
+					<tr class="wiki" hidden>
+						<td>
+							<input type="text" class="offlineWiki" placeholder="wikipedia_en_all_novid"/>
+						</td>
+						<td>
+							<input type="text" class="target" placeholder="*://somesite.com/sub/*"/>
+						</td>
+						<td>
+							<input type="text" class="matcher" placeholder="Regex to get the page string from url"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<button id="btnSave">Save</button>
+		<button id="btnAdd">+ Add</button>
+		</div>
+    </body>
+    <script src="options.js"></script>
+  </html>
